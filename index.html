@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Задание — ссылки и форма</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 15px;
+            font-size: 16px;
+
+        }
+
+        h1 {
+            font-size: 30px;
+
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        ul li {
+            font-size: 19px;
+
+        }
+
+        ol li {
+            font-size: 19px;
+
+        }
+
+        ul li a img {
+            width: 360px;
+            height: auto;
+        }
+
+        ul li::marker {
+            color: #dd239f;
+        }
+
+        ol li::marker {
+            color: hotpink;
+        }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #dd239f;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .required {
+            color: pink;
+        }
+
+        fieldset {
+            border: 1px solid #dd239f;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Список гиперссылок</h1>
+    <ul>
+        <li><a href="http://kubsu.ru/">альтернативная гиперссылка на главную страницу кубгу (http)</a></li>
+        <li><a href="https://kubsu.ru/">альтернативная гиперссылка на главную страницу кубгу (https)</a></li>
+        <li><a href="https://kubsu.ru/"><img src="c:\Users\Дмитрий\Downloads\kubgu.jpg" alt="КубГУ"></a></li>
+        <li><a href="/pages/internal.html">сокращенная ссылка на внутреннюю страницу</a></li>
+        <li><a href="/">сокращенная ссылка на главную страницу</a></li>
+        <li><a href="#section1">Ссылка на фрагмент текущей страницы</a></li>
+        <li><a href="search.html?cat=books&sort=price&page=3">ссылка с 3 параметрами в URL</a></li>
+        <li><a href="product.html?id=42">ссылка с параметром id в URL</a></li>
+        <li><a href="page.html">относительная ссылка на страницу в текущем каталоге</a></li>
+        <li><a href="about/page.html">относительная ссылка на страницу в каталоге about</a></li>
+        <li><a href="../up-one.html">относительная ссылка на страницу уровнем выше текущего</a></li>
+        <li><a href="../../up-two.html">относительная ссылка на страницу в каталоге 2 уровнями выше</a></li>
+        <li>
+            <p>Это абзац с <a href="https://example.com/">контекстной ссылкой</a> внутри текста.</p>
+        </li>
+        <li><a href="https://htmlacademy.ru/blog/html/free-html-template">ссылка на фрагмент страницы стороннего
+                сайта</a></li>
+        <li><img src="map.jpg" usemap="#m" alt="map"><map name="m"><area shape="rect" coords="0,0,100,50"
+                    href="rect.html" alt="rect"><area shape="circle" coords="150,75,30" href="circle.html"
+                    alt="circle"></map></li>
+        <li><a href="">Пустой href</a></li>
+        <li><a>Тег a без href</a></li>
+        <li><a href="https://example.com/" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
+        <li><a href="https://example.com/secret.html" rel="nofollow">Ссылка на страницу, запрет индексации</a></li>
+    </ul>
+
+    <h2>Нумерованный список с title</h2>
+    <ol>
+        <li><a href="https://kubsu.ru/" title="Первая ссылка">Первая</a></li>
+        <li><a href="https://kubsu.ru/" title="Вторая ссылка">Вторая</a></li>
+    </ol>
+
+    <h2>FTP (пример)</h2>
+    <p><a href="ftp://user:password@ftp.example.com/file.zip">ftp://user:password@ftp.example.com/file.
+            zip</a></p>
+
+    <h1>Форма регистрации</h1>
+    <form action="#" method="post">
+        <!-- Личная информация -->
+        <fieldset>
+            <legend>Личная информация</legend>
+            <div class="form-group">
+                <label for="fio">ФИО: <span class="required">*</span></label>
+                <input type="text" id="fio" name="fio" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Телефон: <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail: <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="birthdate">Дата рождения: <span class="required">*</span></label>
+                <input type="date" id="birthdate" name="birthdate" required>
+            </div>
+        </fieldset>
+
+        <!-- Пол -->
+        <fieldset>
+            <legend>Пол</legend>
+            <div class="form-group">
+                <label><input type="radio" name="gender" value="male"> Мужской</label>
+                <label><input type="radio" name="gender" value="female"> Женский</label>
+            </div>
+        </fieldset>
+
+        <!-- Языки -->
+        <fieldset>
+            <legend>Любимый язык программирования</legend>
+            <div class="form-group">
+                <select id="languages" name="languages" multiple size="6">
+                    <option value="pascal">Pascal</option>
+                    <option value="c">C</option>
+                    <option value="cpp">C++</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="php">PHP</option>
+                    <option value="python">Python</option>
+                    <option value="java">Java</option>
+                    <option value="haskel">Haskel</option>
+                    <option value="clojure">Clojure</option>
+                    <option value="prolog">Prolog</option>
+                    <option value="scala">Scala</option>
+                </select>
+                <div><small>Для множественного выбора используйте Ctrl+клик</small></div>
+            </div>
+        </fieldset>
+
+        <!-- Биография -->
+        <fieldset>
+            <legend>Биография</legend>
+            <div class="form-group">
+                <textarea id="bio" name="bio" placeholder="Расскажите о себе..."></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Чекбокс -->
+        <div class="form-group">
+            <label><input type="checkbox" name="agreement" required> С контрактом ознакомлен(а) <span
+                    class="required">*</span></label>
+        </div>
+
+        <!-- Кнопка -->
+        <div class="form-group">
+            <button type="submit">Сохранить</button>
+        </div>
+    </form>
+</body>
+
+</html>
