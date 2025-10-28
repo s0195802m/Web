@@ -94,43 +94,58 @@
 </head>
 
 <body>
-    <h1>Список гиперссылок</h1>
-    <ul>
-        <li><a href="http://kubsu.ru/">альтернативная гиперссылка на главную страницу кубгу (http)</a></li>
-        <li><a href="https://kubsu.ru/">альтернативная гиперссылка на главную страницу кубгу (https)</a></li>
-        <li><a href="https://kubsu.ru/"><img src="c:\Users\Дмитрий\Downloads\kubgu.jpg" alt="КубГУ"></a></li>
-        <li><a href="/pages/internal.html">сокращенная ссылка на внутреннюю страницу</a></li>
-        <li><a href="/">сокращенная ссылка на главную страницу</a></li>
-        <li><a href="#section1">Ссылка на фрагмент текущей страницы</a></li>
-        <li><a href="search.html?cat=books&sort=price&page=3">ссылка с 3 параметрами в URL</a></li>
-        <li><a href="product.html?id=42">ссылка с параметром id в URL</a></li>
-        <li><a href="page.html">относительная ссылка на страницу в текущем каталоге</a></li>
-        <li><a href="about/page.html">относительная ссылка на страницу в каталоге about</a></li>
-        <li><a href="../up-one.html">относительная ссылка на страницу уровнем выше текущего</a></li>
-        <li><a href="../../up-two.html">относительная ссылка на страницу в каталоге 2 уровнями выше</a></li>
+   <ul>
+        <li><a href="http://kubsu.ru/">1. Абсолютная ссылка на главную страницу сайта kubsu.ru (http)</a></li>
+        <li><a href="https://kubsu.ru/">2. Абсолютная ссылка на главную страницу kubsu.ru (https)</a></li>
+
+        <!-- 3. Ссылка-изображение -->
         <li>
-            <p>Это абзац с <a href="https://example.com/">контекстной ссылкой</a> внутри текста.</p>
+            <a href="https://kubsu.ru/">
+                <img src="photo_2025-09-21_23-25-34.jpg" alt="Изображение KubSU" width="300">
+            </a> — 3. Ссылка-изображение
         </li>
-        <li><a href="https://htmlacademy.ru/blog/html/free-html-template">ссылка на фрагмент страницы стороннего
-                сайта</a></li>
-        <li><img src="map.jpg" usemap="#m" alt="map"><map name="m"><area shape="rect" coords="0,0,100,50"
-                    href="rect.html" alt="rect"><area shape="circle" coords="150,75,30" href="circle.html"
-                    alt="circle"></map></li>
-        <li><a href="">Пустой href</a></li>
-        <li><a>Тег a без href</a></li>
-        <li><a href="https://example.com/" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
-        <li><a href="https://example.com/secret.html" rel="nofollow">Ссылка на страницу, запрет индексации</a></li>
+
+        <li><a href="inner.html">4. Сокращённая ссылка на внутреннюю страницу</a></li>
+        <li><a href="/">5. Сокращённая ссылка на главную страницу</a></li>
+        <li><a href="#fragment">6. Ссылка на фрагмент текущей страницы</a></li>
+        <li><a href="search.html?query=html&sort=date&user=student">7. Ссылка с тремя параметрами в URL</a></li>
+        <li><a href="page.html?id=15">8. Ссылка с параметром id в URL</a></li>
+        <li><a href="page.html">9. Относительная ссылка на страницу в текущем каталоге</a></li>
+        <li><a href="about/page.html">10. Относительная ссылка на страницу в каталоге about</a></li>
+        <li><a href="../page.html">11. Относительная ссылка на страницу уровнем выше</a></li>
+        <li><a href="../../index.html">12. Относительная ссылка на страницу двумя уровнями выше</a></li>
+
+        <li>13. Контекстная ссылка в тексте: 
+            Узнать больше о <a href="https://developer.mozilla.org/ru/docs/Web/HTML">HTML</a>.
+        </li>
+
+        <li><a href="https://example.com/page#section2">14. Ссылка на фрагмент стороннего сайта</a></li>
+
+      
+        <li>
+            15. Ссылки из областей картинки (HTML-тег map):<br>
+            <img src="photo_2025-09-21_23-25-34.jpg" usemap="#image-map" alt="Моё фото" width="400">
+            <map name="image-map">
+                <area shape="rect" coords="0,0,150,150" href="https://kubsu.ru/" alt="Прямоугольная область">
+                <area shape="circle" coords="300,100,60" href="https://example.com" alt="Круглая область">
+            </map>
+        </li>
+
+        <li><a href="">16. Ссылка с пустым href</a></li>
+        <li><a>17. Ссылка без href</a></li>
+        <li><a href="https://example.com/nofollow" rel="nofollow">18. Ссылка, по которой запрещён переход поисковикам</a></li>
+        <li><a href="https://example.com/" rel="noindex">19. Ссылка, запрещённая для индексации поисковиками</a></li>
+
+        <li>
+            <ol>
+                <li><a href="https://kubsu.ru/" title="Главная КубГУ">Главная КубГУ</a></li>
+                <li><a href="https://developer.mozilla.org/" title="Документация MDN">MDN Docs</a></li>
+            </ol>
+            — 20. Нумерованный список ссылок с подписями title
+        </li>
+
+        <li><a href="ftp://user:password@ftp.example.com/file.txt">21. Ссылка на файл на сервере FTP с авторизацией</a></li>
     </ul>
-
-    <h2>Нумерованный список с title</h2>
-    <ol>
-        <li><a href="https://kubsu.ru/" title="Первая ссылка">Первая</a></li>
-        <li><a href="https://kubsu.ru/" title="Вторая ссылка">Вторая</a></li>
-    </ol>
-
-    <h2>FTP (пример)</h2>
-    <p><a href="ftp://user:password@ftp.example.com/file.zip">ftp://user:password@ftp.example.com/file.
-            zip</a></p>
 
     <h1>Форма регистрации</h1>
     <form action="#" method="post">
@@ -205,5 +220,6 @@
         </div>
     </form>
 </body>
+
 
 </html>
